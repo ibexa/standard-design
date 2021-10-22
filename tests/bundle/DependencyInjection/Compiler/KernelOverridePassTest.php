@@ -17,7 +17,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
  *
  * @see \EzSystems\EzPlatformStandardDesignBundle\DependencyInjection\Compiler\EzKernelOverridePass
  */
-class EzKernelOverridePassTest extends AbstractCompilerPassTestCase
+class KernelOverridePassTest extends AbstractCompilerPassTestCase
 {
     public function getTemplatesPathMap()
     {
@@ -37,7 +37,7 @@ class EzKernelOverridePassTest extends AbstractCompilerPassTestCase
     {
         $container->setParameter('ez_platform_standard_design.override_kernel_templates', true);
 
-        $container->addCompilerPass(new EzKernelOverridePass());
+        $container->addCompilerPass(new KernelOverridePass());
     }
 
     /**
@@ -97,4 +97,4 @@ class EzKernelOverridePassTest extends AbstractCompilerPassTestCase
     }
 }
 
-class_alias(EzKernelOverridePassTest::class, 'EzSystems\Tests\EzPlatformStandardDesignBundle\DependencyInjection\Compiler\EzKernelOverridePassTest');
+class_alias(KernelOverridePassTest::class, 'EzSystems\Tests\EzPlatformStandardDesignBundle\DependencyInjection\Compiler\EzKernelOverridePassTest');

@@ -24,7 +24,7 @@ class IbexaStandardDesignBundle extends Bundle
         parent::build($container);
 
         // Ensure compiler passes are processed before eZ Design Engine passes, by giving priority > 0
-        $container->addCompilerPass(new EzKernelOverridePass(), PassConfig::TYPE_BEFORE_OPTIMIZATION, 1);
+        $container->addCompilerPass(new KernelOverridePass(), PassConfig::TYPE_BEFORE_OPTIMIZATION, 1);
         $container->addCompilerPass(new StandardThemePass(), PassConfig::TYPE_BEFORE_OPTIMIZATION, 1);
     }
 }

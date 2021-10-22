@@ -16,7 +16,7 @@ class EzPlatformStandardDesignExtensionTest extends AbstractExtensionTestCase
     protected function getContainerExtensions(): array
     {
         return [
-            new EzPlatformStandardDesignExtension(),
+            new IbexaStandardDesignExtension(),
         ];
     }
 

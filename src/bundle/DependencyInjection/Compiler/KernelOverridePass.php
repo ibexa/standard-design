@@ -29,7 +29,7 @@ class KernelOverridePass implements CompilerPassInterface
     public function process(ContainerBuilder $container)
     {
         $overrideTemplates = $container->getParameter(
-            EzPlatformStandardDesignExtension::OVERRIDE_KERNEL_TEMPLATES_PARAM_NAME
+            IbexaStandardDesignExtension::OVERRIDE_KERNEL_TEMPLATES_PARAM_NAME
         );
         if ($overrideTemplates) {
             $loader = new YamlFileLoader(
