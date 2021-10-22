@@ -6,10 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformStandardDesignBundle;
+namespace Ibexa\Bundle\StandardDesign;
 
-use EzSystems\EzPlatformStandardDesignBundle\DependencyInjection\Compiler\EzKernelOverridePass;
-use EzSystems\EzPlatformStandardDesignBundle\DependencyInjection\Compiler\StandardThemePass;
+use Ibexa\Bundle\StandardDesign\DependencyInjection\Compiler\KernelOverridePass;
+use Ibexa\Bundle\StandardDesign\DependencyInjection\Compiler\StandardThemePass;
 use Symfony\Component\DependencyInjection\Compiler\PassConfig;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -17,7 +17,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 /**
  * eZ Platform Standard Design Bundle.
  */
-class EzPlatformStandardDesignBundle extends Bundle
+class IbexaStandardDesignBundle extends Bundle
 {
     public function build(ContainerBuilder $container)
     {
@@ -28,3 +28,5 @@ class EzPlatformStandardDesignBundle extends Bundle
         $container->addCompilerPass(new StandardThemePass(), PassConfig::TYPE_BEFORE_OPTIMIZATION, 1);
     }
 }
+
+class_alias(IbexaStandardDesignBundle::class, 'EzSystems\EzPlatformStandardDesignBundle\EzPlatformStandardDesignBundle');

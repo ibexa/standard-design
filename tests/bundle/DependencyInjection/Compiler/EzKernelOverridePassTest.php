@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Tests\EzPlatformStandardDesignBundle\DependencyInjection\Compiler;
+namespace Ibexa\Tests\Bundle\StandardDesign\DependencyInjection\Compiler;
 
-use EzSystems\EzPlatformStandardDesignBundle\DependencyInjection\Compiler\EzKernelOverridePass;
+use Ibexa\Bundle\StandardDesign\DependencyInjection\Compiler\KernelOverridePass;
 use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractCompilerPassTestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
@@ -96,3 +96,5 @@ class EzKernelOverridePassTest extends AbstractCompilerPassTestCase
         }
     }
 }
+
+class_alias(EzKernelOverridePassTest::class, 'EzSystems\Tests\EzPlatformStandardDesignBundle\DependencyInjection\Compiler\EzKernelOverridePassTest');
