@@ -1,8 +1,11 @@
 {
-    "name": "ezsystems/ezplatform-standard-design",
-    "description": "eZ Platform Standard Design Bundle",
-    "type": "ezplatform-bundle",
+    "name": "ibexa/standard-design",
+    "description": "Ibexa Standard Design Bundle",
+    "type": "ibexa-bundle",
     "license": "GPL-2.0-only",
+    "replace": {
+        "ezsystems/ezplatform-standard-design": "*"
+    },
     "require": {
         "symfony/http-kernel": "^5.0",
         "ezsystems/ezplatform-design-engine": "^4.0@dev",
@@ -18,12 +21,17 @@
     },
     "autoload": {
         "psr-4": {
-            "EzSystems\\EzPlatformStandardDesignBundle\\": "src/bundle"
+            "EzSystems\\EzPlatformStandardDesignBundle\\": "src/bundle",
+            "Ibexa\\StandardDesign\\": "src/lib/",
+            "Ibexa\\Bundle\\StandardDesign\\": "src/bundle/",
+            "Ibexa\\Contracts\\StandardDesign\\": "src/contracts/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "EzSystems\\Tests\\EzPlatformStandardDesignBundle\\": "tests/bundle"
+            "EzSystems\\Tests\\EzPlatformStandardDesignBundle\\": "tests/bundle",
+            "Ibexa\\Tests\\StandardDesign\\": "tests/lib/",
+            "Ibexa\\Tests\\Bundle\\StandardDesign\\": "tests/bundle/"
         }
     },
     "scripts": {
@@ -33,7 +41,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "4.0.x-dev"
+            "dev-main": "4.0.x-dev"
         }
     }
 }

@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\Tests\EzPlatformStandardDesignBundle\DependencyInjection\Compiler;
+namespace Ibexa\Tests\Bundle\StandardDesign\DependencyInjection\Compiler;
 
-use EzSystems\EzPlatformStandardDesignBundle\DependencyInjection\Compiler\StandardThemePass;
+use Ibexa\Bundle\StandardDesign\DependencyInjection\Compiler\StandardThemePass;
 use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractCompilerPassTestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
@@ -81,3 +81,5 @@ class StandardThemePassTest extends AbstractCompilerPassTestCase
         $container->addCompilerPass(new StandardThemePass());
     }
 }
+
+class_alias(StandardThemePassTest::class, 'EzSystems\Tests\EzPlatformStandardDesignBundle\DependencyInjection\Compiler\StandardThemePassTest');
