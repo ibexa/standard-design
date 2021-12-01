@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 declare(strict_types=1);
@@ -11,8 +11,8 @@ namespace Ibexa\Bundle\StandardDesign;
 use Ibexa\Bundle\StandardDesign\DependencyInjection\Compiler\KernelOverridePass;
 use Ibexa\Bundle\StandardDesign\DependencyInjection\Compiler\StandardThemePass;
 use Symfony\Component\DependencyInjection\Compiler\PassConfig;
-use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
  * eZ Platform Standard Design Bundle.
