@@ -12,7 +12,7 @@
         "ibexa/core": "^4.0@dev"
     },
     "require-dev": {
-        "ibexa/doctrine-dbal-schema": "^4.0@dev",
+        "ibexa/doctrine-schema": "^4.0@dev",
         "matthiasnoback/symfony-dependency-injection-test": "^4.1",
         "phpunit/phpunit": "^8.1",
         "ibexa/code-style": "^1.0",
