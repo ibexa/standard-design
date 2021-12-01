@@ -8,14 +8,14 @@
     },
     "require": {
         "symfony/http-kernel": "^5.0",
-        "ezsystems/ezplatform-design-engine": "^4.0@dev",
-        "ezsystems/ezplatform-kernel": "^4.0@dev"
+        "ibexa/design-engine": "^4.0@dev",
+        "ibexa/core": "^4.0@dev"
     },
     "require-dev": {
-        "ezsystems/doctrine-dbal-schema": "^4.0@dev",
+        "ibexa/doctrine-dbal-schema": "^4.0@dev",
         "matthiasnoback/symfony-dependency-injection-test": "^4.1",
         "phpunit/phpunit": "^8.1",
-        "ezsystems/ezplatform-code-style": "^0.1.0",
+        "ibexa/code-style": "^1.0",
         "friendsofphp/php-cs-fixer": "^2.16.1",
         "ibexa/ci-scripts": "^0.2@dev"
     },

@@ -15,7 +15,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 /**
  * Test overriding eZ Kernel setup for templates with eZ Design.
  *
- * @see \EzSystems\EzPlatformStandardDesignBundle\DependencyInjection\Compiler\EzKernelOverridePass
+ * @see \Ibexa\Bundle\StandardDesign\DependencyInjection\Compiler\KernelOverridePass
  */
 class KernelOverridePassTest extends AbstractCompilerPassTestCase
 {
