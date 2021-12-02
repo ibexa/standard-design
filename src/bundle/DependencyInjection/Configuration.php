@@ -20,7 +20,7 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder('ez_platform_standard_design');
+        $treeBuilder = new TreeBuilder(IbexaStandardDesignExtension::EXTENSION_NAME);
 
         $rootNode = $treeBuilder->getRootNode();
         $rootNode
