@@ -66,7 +66,7 @@ class IbexaStandardDesignExtension extends Extension implements PrependExtension
     {
         $configFile = __DIR__ . '/../Resources/config/extension/ezdesign.yaml';
         $config = Yaml::parseFile($configFile);
-        $containerBuilder->prependExtensionConfig('ezdesign', $config);
+        $containerBuilder->prependExtensionConfig('ibexa_design_engine', $config);
         $containerBuilder->addResource(new FileResource($configFile));
     }
 }

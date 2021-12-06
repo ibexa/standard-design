@@ -30,7 +30,7 @@ class EzPlatformStandardDesignExtensionTest extends AbstractExtensionTestCase
                     'standard' => ['standard'],
                 ],
             ],
-            $this->container->getExtensionConfig('ezdesign')
+            $this->container->getExtensionConfig('ibexa_design_engine')
         );
     }
 }
