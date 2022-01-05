@@ -54,7 +54,8 @@ class KernelOverridePass implements CompilerPassInterface
         }
 
         $bundlesMetaData = $container->getParameter('kernel.bundles_metadata');
-        if (!isset($bundlesMetaData['EzPublishCoreBundle']['path'])) {
+        $path = $bundlesMetaData['IbexaCoreBundle']['path'] ?? null;
+        if (null === $path) {
             return;
         }
 
@@ -62,7 +63,7 @@ class KernelOverridePass implements CompilerPassInterface
             ? $container->getParameter('ezdesign.templates_path_map')
             : [];
 
-        $templatesPathMap['standard'][] = $bundlesMetaData['EzPublishCoreBundle']['path'] . '/Resources/views';
+        $templatesPathMap['standard'][] = $path . '/Resources/views';
 
         $container->setParameter('ezdesign.templates_path_map', $templatesPathMap);
     }
