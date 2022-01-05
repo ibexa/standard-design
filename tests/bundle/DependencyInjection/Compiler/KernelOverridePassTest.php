@@ -51,7 +51,7 @@ class KernelOverridePassTest extends AbstractCompilerPassTestCase
         $this->setParameter(
             'kernel.bundles_metadata',
             [
-                'EzPublishCoreBundle' => [
+                'IbexaCoreBundle' => [
                     'path' => '/some/path',
                 ],
             ]
