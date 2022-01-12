@@ -1,12 +1,12 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformStandardDesignBundle\DependencyInjection;
+namespace Ibexa\Bundle\StandardDesign\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -20,7 +20,7 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder('ez_platform_standard_design');
+        $treeBuilder = new TreeBuilder(IbexaStandardDesignExtension::EXTENSION_NAME);
 
         $rootNode = $treeBuilder->getRootNode();
         $rootNode
@@ -35,3 +35,5 @@ class Configuration implements ConfigurationInterface
         return $treeBuilder;
     }
 }
+
+class_alias(Configuration::class, 'EzSystems\EzPlatformStandardDesignBundle\DependencyInjection\Configuration');

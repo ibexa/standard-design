@@ -1,14 +1,14 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformStandardDesignBundle\DependencyInjection\Compiler;
+namespace Ibexa\Bundle\StandardDesign\DependencyInjection\Compiler;
 
-use EzSystems\EzPlatformStandardDesignBundle\DependencyInjection\EzPlatformStandardDesignExtension;
+use Ibexa\Bundle\StandardDesign\DependencyInjection\IbexaStandardDesignExtension;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -17,7 +17,7 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 /**
  * Compiler pass implemented to override eZ Platform Kernel default template paths defined in Container.
  */
-class EzKernelOverridePass implements CompilerPassInterface
+class KernelOverridePass implements CompilerPassInterface
 {
     /**
      * Load Standard Design configuration which overrides eZ Platform Kernel setup.
@@ -29,7 +29,7 @@ class EzKernelOverridePass implements CompilerPassInterface
     public function process(ContainerBuilder $container)
     {
         $overrideTemplates = $container->getParameter(
-            EzPlatformStandardDesignExtension::OVERRIDE_KERNEL_TEMPLATES_PARAM_NAME
+            IbexaStandardDesignExtension::OVERRIDE_KERNEL_TEMPLATES_PARAM_NAME
         );
         if ($overrideTemplates) {
             $loader = new YamlFileLoader(
@@ -54,7 +54,8 @@ class EzKernelOverridePass implements CompilerPassInterface
         }
 
         $bundlesMetaData = $container->getParameter('kernel.bundles_metadata');
-        if (!isset($bundlesMetaData['EzPublishCoreBundle']['path'])) {
+        $path = $bundlesMetaData['IbexaCoreBundle']['path'] ?? null;
+        if (null === $path) {
             return;
         }
 
@@ -62,8 +63,10 @@ class EzKernelOverridePass implements CompilerPassInterface
             ? $container->getParameter('ezdesign.templates_path_map')
             : [];
 
-        $templatesPathMap['standard'][] = $bundlesMetaData['EzPublishCoreBundle']['path'] . '/Resources/views';
+        $templatesPathMap['standard'][] = $path . '/Resources/views';
 
         $container->setParameter('ezdesign.templates_path_map', $templatesPathMap);
     }
 }
+
+class_alias(KernelOverridePass::class, 'EzSystems\EzPlatformStandardDesignBundle\DependencyInjection\Compiler\EzKernelOverridePass');
