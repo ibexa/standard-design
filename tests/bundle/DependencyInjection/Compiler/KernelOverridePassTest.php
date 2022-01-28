@@ -88,9 +88,9 @@ class KernelOverridePassTest extends AbstractCompilerPassTestCase
 
             foreach ($templates as $templatePath) {
                 self::assertStringStartsWith(
-                    '@ezdesign/',
+                    '@ibexadesign/',
                     $templatePath,
-                    "Parameter '{$parameterId}' template(s) doesn't start with '@ezdesign' prefix"
+                    "Parameter '{$parameterId}' template(s) doesn't start with '@ibexadesign' prefix"
                 );
             }
         }
