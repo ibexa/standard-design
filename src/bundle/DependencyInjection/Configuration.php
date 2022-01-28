@@ -27,7 +27,7 @@ class Configuration implements ConfigurationInterface
             ->children()
                 ->booleanNode('override_kernel_templates')
                     ->defaultFalse()
-                    ->info('Enable this to prepend Kernel default template paths with @ezdesign namespace')
+                    ->info('Enable this to prepend Kernel default template paths with @ibexadesign namespace')
                 ->end()
             ->end()
         ;
