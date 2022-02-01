@@ -64,11 +64,11 @@ class StandardThemePassTest extends AbstractCompilerPassTestCase
         array $designList,
         array $expectedDesignList
     ) {
-        $this->setParameter('ezdesign.design_list', $designList);
+        $this->setParameter('ibexa.design.list', $designList);
 
         $this->compile();
 
-        self::assertContainerBuilderHasParameter('ezdesign.design_list', $expectedDesignList);
+        self::assertContainerBuilderHasParameter('ibexa.design.list', $expectedDesignList);
     }
 
     /**

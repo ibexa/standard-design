@@ -35,7 +35,7 @@ class KernelOverridePassTest extends AbstractCompilerPassTestCase
      */
     protected function registerCompilerPass(ContainerBuilder $container): void
     {
-        $container->setParameter('ez_platform_standard_design.override_kernel_templates', true);
+        $container->setParameter('ibexa.design.standard.override_kernel_templates', true);
 
         $container->addCompilerPass(new KernelOverridePass());
     }
@@ -47,7 +47,7 @@ class KernelOverridePassTest extends AbstractCompilerPassTestCase
      */
     public function testKernelViewsDirectoryIsMappedToStandardTheme(array $templatesPathMap)
     {
-        $this->setParameter('ezdesign.templates_path_map', $templatesPathMap);
+        $this->setParameter('ibexa.design.templates.path_map', $templatesPathMap);
         $this->setParameter(
             'kernel.bundles_metadata',
             [
@@ -62,7 +62,7 @@ class KernelOverridePassTest extends AbstractCompilerPassTestCase
         $templatesPathMap['standard'][] = '/some/path/Resources/views';
 
         self::assertContainerBuilderHasParameter(
-            'ezdesign.templates_path_map',
+            'ibexa.design.templates.path_map',
             $templatesPathMap
         );
     }

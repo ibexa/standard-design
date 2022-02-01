@@ -18,7 +18,7 @@ class IbexaStandardDesignExtension extends Extension implements PrependExtension
 {
     public const EXTENSION_NAME = 'ibexa_standard_design';
 
-    public const OVERRIDE_KERNEL_TEMPLATES_PARAM_NAME = 'ez_platform_standard_design.override_kernel_templates';
+    public const OVERRIDE_KERNEL_TEMPLATES_PARAM_NAME = 'ibexa.design.standard.override_kernel_templates';
 
     public function getAlias(): string
     {

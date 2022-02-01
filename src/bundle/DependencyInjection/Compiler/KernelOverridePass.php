@@ -59,13 +59,13 @@ class KernelOverridePass implements CompilerPassInterface
             return;
         }
 
-        $templatesPathMap = $container->hasParameter('ezdesign.templates_path_map')
-            ? $container->getParameter('ezdesign.templates_path_map')
+        $templatesPathMap = $container->hasParameter('ibexa.design.templates.path_map')
+            ? $container->getParameter('ibexa.design.templates.path_map')
             : [];
 
         $templatesPathMap['standard'][] = $path . '/Resources/views';
 
-        $container->setParameter('ezdesign.templates_path_map', $templatesPathMap);
+        $container->setParameter('ibexa.design.templates.path_map', $templatesPathMap);
     }
 }
 

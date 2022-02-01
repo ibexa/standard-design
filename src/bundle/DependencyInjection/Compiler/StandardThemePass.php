@@ -26,17 +26,17 @@ class StandardThemePass implements CompilerPassInterface
      */
     public function process(ContainerBuilder $container)
     {
-        if (!$container->hasParameter('ezdesign.design_list')) {
+        if (!$container->hasParameter('ibexa.design.list')) {
             return;
         }
 
-        $designList = $container->getParameter('ezdesign.design_list');
+        $designList = $container->getParameter('ibexa.design.list');
         foreach ($designList as $designName => $themes) {
             if (!in_array('standard', $themes)) {
                 $designList[$designName][] = 'standard';
             }
         }
-        $container->setParameter('ezdesign.design_list', $designList);
+        $container->setParameter('ibexa.design.list', $designList);
     }
 }
 
