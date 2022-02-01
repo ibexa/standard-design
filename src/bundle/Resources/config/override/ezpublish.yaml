@@ -1,13 +1,13 @@
 parameters:
-    ezpublish.content_view.viewbase_layout: '@@ibexadesign/viewbase_layout.html.twig'
+    ibexa.content_view.viewbase_layout: '@@ibexadesign/viewbase_layout.html.twig'
 
-    ezplatform.default_view_templates.content.full: '@@ibexadesign/default/content/full.html.twig'
-    ezplatform.default_view_templates.content.line: '@@ibexadesign/default/content/line.html.twig'
-    ezplatform.default_view_templates.content.text_linked: '@@ibexadesign/default/content/text_linked.html.twig'
-    ezplatform.default_view_templates.content.embed: '@@ibexadesign/default/content/embed.html.twig'
-    ezplatform.default_view_templates.content.embed_image: '@@ibexadesign/default/content/embed_image.html.twig'
-    ezplatform.default_view_templates.block: '@@ibexadesign/default/block/block.html.twig'
+    ibexa.default_view_templates.content.full: '@@ibexadesign/default/content/full.html.twig'
+    ibexa.default_view_templates.content.line: '@@ibexadesign/default/content/line.html.twig'
+    ibexa.default_view_templates.content.text_linked: '@@ibexadesign/default/content/text_linked.html.twig'
+    ibexa.default_view_templates.content.embed: '@@ibexadesign/default/content/embed.html.twig'
+    ibexa.default_view_templates.content.embed_image: '@@ibexadesign/default/content/embed_image.html.twig'
+    ibexa.default_view_templates.block: '@@ibexadesign/default/block/block.html.twig'
 
-    ezplatform.default_templates.pagelayout: '@@ibexadesign/pagelayout.html.twig'
-    ezplatform.default_templates.field_templates: '@@ibexadesign/content_fields.html.twig'
-    ezplatform.default_templates.fielddefinition_settings_templates: '@@ibexadesign/fielddefinition_settings.html.twig'
+    ibexa.default_templates.pagelayout: '@@ibexadesign/pagelayout.html.twig'
+    ibexa.default_templates.field_templates: '@@ibexadesign/content_fields.html.twig'
+    ibexa.default_templates.fielddefinition_settings_templates: '@@ibexadesign/fielddefinition_settings.html.twig'
