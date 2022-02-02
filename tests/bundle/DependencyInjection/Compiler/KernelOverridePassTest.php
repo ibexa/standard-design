@@ -13,7 +13,7 @@ use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractCompilerPassTestCase
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 /**
- * Test overriding eZ Kernel setup for templates with eZ Design.
+ * Test overriding Ibexa Core setup for templates with Ibexa Design.
  *
  * @see \Ibexa\Bundle\StandardDesign\DependencyInjection\Compiler\KernelOverridePass
  */

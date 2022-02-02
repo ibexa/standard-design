@@ -20,7 +20,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 class StandardThemePassTest extends AbstractCompilerPassTestCase
 {
     /**
-     * Data provider returning various eZ Design Lists configurations.
+     * Data provider returning various Ibexa Design Lists configurations.
      */
     public function getDesignList()
     {
