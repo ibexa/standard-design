@@ -15,7 +15,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
 /**
- * Compiler pass implemented to override Ibexa Kernel default template paths defined in Container.
+ * Compiler pass implemented to override Ibexa DXP Core default template paths defined in Container.
  */
 class KernelOverridePass implements CompilerPassInterface
 {
