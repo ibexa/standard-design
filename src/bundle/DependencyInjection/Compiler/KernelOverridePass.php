@@ -15,12 +15,12 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
 /**
- * Compiler pass implemented to override eZ Platform Kernel default template paths defined in Container.
+ * Compiler pass implemented to override Ibexa DXP Core default template paths defined in Container.
  */
 class KernelOverridePass implements CompilerPassInterface
 {
     /**
-     * Load Standard Design configuration which overrides eZ Platform Kernel setup.
+     * Load Standard Design configuration which overrides Ibexa DXP Core setup.
      *
      * @param \Symfony\Component\DependencyInjection\ContainerBuilder $container
      *
@@ -43,7 +43,7 @@ class KernelOverridePass implements CompilerPassInterface
     }
 
     /**
-     * Determine and append to standard theme eZ Kernel Core bundle views directory path.
+     * Determine and append to standard theme Ibexa Core bundle views directory path.
      *
      * @param \Symfony\Component\DependencyInjection\ContainerBuilder $container
      */

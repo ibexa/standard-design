@@ -15,7 +15,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
- * eZ Platform Standard Design Bundle.
+ * Ibexa DXP Standard Design Bundle.
  */
 class IbexaStandardDesignBundle extends Bundle
 {
@@ -23,7 +23,7 @@ class IbexaStandardDesignBundle extends Bundle
     {
         parent::build($container);
 
-        // Ensure compiler passes are processed before eZ Design Engine passes, by giving priority > 0
+        // Ensure compiler passes are processed before Ibexa Design Engine passes, by giving priority > 0
         $container->addCompilerPass(new KernelOverridePass(), PassConfig::TYPE_BEFORE_OPTIMIZATION, 1);
         $container->addCompilerPass(new StandardThemePass(), PassConfig::TYPE_BEFORE_OPTIMIZATION, 1);
     }

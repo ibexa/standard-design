@@ -14,7 +14,7 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 class Configuration implements ConfigurationInterface
 {
     /**
-     * Generate Configuration for eZ Platform Standard Design.
+     * Generate Configuration for Ibexa DXP Standard Design.
      *
      * @return \Symfony\Component\Config\Definition\Builder\TreeBuilder The tree builder
      */
