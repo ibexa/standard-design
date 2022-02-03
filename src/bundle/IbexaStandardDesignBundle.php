@@ -15,7 +15,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
- * Ibexa Standard Design Bundle.
+ * Ibexa DXP Standard Design Bundle.
  */
 class IbexaStandardDesignBundle extends Bundle
 {

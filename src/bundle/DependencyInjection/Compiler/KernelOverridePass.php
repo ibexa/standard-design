@@ -20,7 +20,7 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 class KernelOverridePass implements CompilerPassInterface
 {
     /**
-     * Load Standard Design configuration which overrides Ibexa Kernel setup.
+     * Load Standard Design configuration which overrides Ibexa DXP Core setup.
      *
      * @param \Symfony\Component\DependencyInjection\ContainerBuilder $container
      *
