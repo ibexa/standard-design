@@ -1,12 +1,12 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformStandardDesignBundle\DependencyInjection\Compiler;
+namespace Ibexa\Bundle\StandardDesign\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -26,16 +26,18 @@ class StandardThemePass implements CompilerPassInterface
      */
     public function process(ContainerBuilder $container)
     {
-        if (!$container->hasParameter('ezdesign.design_list')) {
+        if (!$container->hasParameter('ibexa.design.list')) {
             return;
         }
 
-        $designList = $container->getParameter('ezdesign.design_list');
+        $designList = $container->getParameter('ibexa.design.list');
         foreach ($designList as $designName => $themes) {
             if (!in_array('standard', $themes)) {
                 $designList[$designName][] = 'standard';
             }
         }
-        $container->setParameter('ezdesign.design_list', $designList);
+        $container->setParameter('ibexa.design.list', $designList);
     }
 }
+
+class_alias(StandardThemePass::class, 'EzSystems\EzPlatformStandardDesignBundle\DependencyInjection\Compiler\StandardThemePass');

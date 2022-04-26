@@ -1,12 +1,12 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformStandardDesignBundle\DependencyInjection;
+namespace Ibexa\Bundle\StandardDesign\DependencyInjection;
 
 use Symfony\Component\Config\Resource\FileResource;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -14,9 +14,16 @@ use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
 use Symfony\Component\Yaml\Yaml;
 
-class EzPlatformStandardDesignExtension extends Extension implements PrependExtensionInterface
+class IbexaStandardDesignExtension extends Extension implements PrependExtensionInterface
 {
-    const OVERRIDE_KERNEL_TEMPLATES_PARAM_NAME = 'ez_platform_standard_design.override_kernel_templates';
+    public const EXTENSION_NAME = 'ibexa_standard_design';
+
+    public const OVERRIDE_KERNEL_TEMPLATES_PARAM_NAME = 'ibexa.design.standard.override_kernel_templates';
+
+    public function getAlias(): string
+    {
+        return self::EXTENSION_NAME;
+    }
 
     /**
      * Load Bundle Configuration.
@@ -59,7 +66,9 @@ class EzPlatformStandardDesignExtension extends Extension implements PrependExte
     {
         $configFile = __DIR__ . '/../Resources/config/extension/ezdesign.yaml';
         $config = Yaml::parseFile($configFile);
-        $containerBuilder->prependExtensionConfig('ezdesign', $config);
+        $containerBuilder->prependExtensionConfig('ibexa_design_engine', $config);
         $containerBuilder->addResource(new FileResource($configFile));
     }
 }
+
+class_alias(IbexaStandardDesignExtension::class, 'EzSystems\EzPlatformStandardDesignBundle\DependencyInjection\EzPlatformStandardDesignExtension');

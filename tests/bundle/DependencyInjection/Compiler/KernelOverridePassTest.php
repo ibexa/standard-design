@@ -1,23 +1,23 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 declare(strict_types=1);
 
-namespace EzSystems\Tests\EzPlatformStandardDesignBundle\DependencyInjection\Compiler;
+namespace Ibexa\Tests\Bundle\StandardDesign\DependencyInjection\Compiler;
 
-use EzSystems\EzPlatformStandardDesignBundle\DependencyInjection\Compiler\EzKernelOverridePass;
+use Ibexa\Bundle\StandardDesign\DependencyInjection\Compiler\KernelOverridePass;
 use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractCompilerPassTestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 /**
- * Test overriding eZ Kernel setup for templates with eZ Design.
+ * Test overriding Ibexa Core setup for templates with Ibexa Design.
  *
- * @see \EzSystems\EzPlatformStandardDesignBundle\DependencyInjection\Compiler\EzKernelOverridePass
+ * @see \Ibexa\Bundle\StandardDesign\DependencyInjection\Compiler\KernelOverridePass
  */
-class EzKernelOverridePassTest extends AbstractCompilerPassTestCase
+class KernelOverridePassTest extends AbstractCompilerPassTestCase
 {
     public function getTemplatesPathMap()
     {
@@ -35,9 +35,9 @@ class EzKernelOverridePassTest extends AbstractCompilerPassTestCase
      */
     protected function registerCompilerPass(ContainerBuilder $container): void
     {
-        $container->setParameter('ez_platform_standard_design.override_kernel_templates', true);
+        $container->setParameter('ibexa.design.standard.override_kernel_templates', true);
 
-        $container->addCompilerPass(new EzKernelOverridePass());
+        $container->addCompilerPass(new KernelOverridePass());
     }
 
     /**
@@ -47,11 +47,11 @@ class EzKernelOverridePassTest extends AbstractCompilerPassTestCase
      */
     public function testKernelViewsDirectoryIsMappedToStandardTheme(array $templatesPathMap)
     {
-        $this->setParameter('ezdesign.templates_path_map', $templatesPathMap);
+        $this->setParameter('ibexa.design.templates.path_map', $templatesPathMap);
         $this->setParameter(
             'kernel.bundles_metadata',
             [
-                'EzPublishCoreBundle' => [
+                'IbexaCoreBundle' => [
                     'path' => '/some/path',
                 ],
             ]
@@ -62,7 +62,7 @@ class EzKernelOverridePassTest extends AbstractCompilerPassTestCase
         $templatesPathMap['standard'][] = '/some/path/Resources/views';
 
         self::assertContainerBuilderHasParameter(
-            'ezdesign.templates_path_map',
+            'ibexa.design.templates.path_map',
             $templatesPathMap
         );
     }
@@ -88,11 +88,13 @@ class EzKernelOverridePassTest extends AbstractCompilerPassTestCase
 
             foreach ($templates as $templatePath) {
                 self::assertStringStartsWith(
-                    '@ezdesign/',
+                    '@ibexadesign/',
                     $templatePath,
-                    "Parameter '{$parameterId}' template(s) doesn't start with '@ezdesign' prefix"
+                    "Parameter '{$parameterId}' template(s) doesn't start with '@ibexadesign' prefix"
                 );
             }
         }
     }
 }
+
+class_alias(KernelOverridePassTest::class, 'EzSystems\Tests\EzPlatformStandardDesignBundle\DependencyInjection\Compiler\EzKernelOverridePassTest');

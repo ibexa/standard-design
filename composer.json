@@ -1,40 +1,48 @@
 {
-    "name": "ezsystems/ezplatform-standard-design",
-    "description": "eZ Platform Standard Design Bundle",
-    "type": "ezplatform-bundle",
+    "name": "ibexa/standard-design",
+    "description": "Ibexa Standard Design Bundle",
+    "type": "ibexa-bundle",
     "license": "GPL-2.0-only",
+    "replace": {
+        "ezsystems/ezplatform-standard-design": "*"
+    },
     "require": {
         "symfony/http-kernel": "^5.0",
-        "ezsystems/ezplatform-design-engine": "~3.0.0@dev",
-        "ezsystems/ezplatform-kernel": "^1.0@dev",
-        "php": "^7.3 || ^8.0"
+        "ibexa/design-engine": "~4.0.0@dev",
+        "ibexa/core": "~4.0.0@dev",
+        "php": "^7.4 || ^8.0"
     },
     "require-dev": {
-        "ezsystems/doctrine-dbal-schema": "^1.0@dev",
+        "ibexa/doctrine-schema": "~4.0.0@dev",
         "matthiasnoback/symfony-dependency-injection-test": "^4.1",
         "phpunit/phpunit": "^8.1",
-        "ezsystems/ezplatform-code-style": "^0.1.0",
-        "friendsofphp/php-cs-fixer": "^2.16.1",
-        "ibexa/ci-scripts": "^0.1@dev"
+        "ibexa/code-style": "^1.0",
+        "friendsofphp/php-cs-fixer": "^3.0",
+        "ibexa/ci-scripts": "^0.2@dev"
     },
     "autoload": {
         "psr-4": {
-            "EzSystems\\EzPlatformStandardDesignBundle\\": "src/bundle"
+            "EzSystems\\EzPlatformStandardDesignBundle\\": "src/bundle",
+            "Ibexa\\StandardDesign\\": "src/lib/",
+            "Ibexa\\Bundle\\StandardDesign\\": "src/bundle/",
+            "Ibexa\\Contracts\\StandardDesign\\": "src/contracts/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "EzSystems\\Tests\\EzPlatformStandardDesignBundle\\": "tests/bundle"
+            "EzSystems\\Tests\\EzPlatformStandardDesignBundle\\": "tests/bundle",
+            "Ibexa\\Tests\\StandardDesign\\": "tests/lib/",
+            "Ibexa\\Tests\\Bundle\\StandardDesign\\": "tests/bundle/"
         }
     },
     "scripts": {
-        "fix-cs": "php-cs-fixer fix -v --show-progress=estimating",
+        "fix-cs": "php-cs-fixer fix --config=.php-cs-fixer.php -v --show-progress=dots",
         "check-cs": "@fix-cs --dry-run",
         "test": "phpunit -c phpunit.xml"
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "0.3.x-dev"
+            "dev-main": "4.0.x-dev"
         }
     }
 }

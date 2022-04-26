@@ -1,26 +1,26 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 declare(strict_types=1);
 
-namespace EzSystems\Tests\EzPlatformStandardDesignBundle\DependencyInjection\Compiler;
+namespace Ibexa\Tests\Bundle\StandardDesign\DependencyInjection\Compiler;
 
-use EzSystems\EzPlatformStandardDesignBundle\DependencyInjection\Compiler\StandardThemePass;
+use Ibexa\Bundle\StandardDesign\DependencyInjection\Compiler\StandardThemePass;
 use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractCompilerPassTestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 /**
  * Test StandardTheme Compiler pass.
  *
- * @see \EzSystems\EzPlatformStandardDesignBundle\DependencyInjection\Compiler\StandardThemePass
+ * @see \Ibexa\Bundle\StandardDesign\DependencyInjection\Compiler\StandardThemePass
  */
 class StandardThemePassTest extends AbstractCompilerPassTestCase
 {
     /**
-     * Data provider returning various eZ Design Lists configurations.
+     * Data provider returning various Ibexa Design Lists configurations.
      */
     public function getDesignList()
     {
@@ -64,11 +64,11 @@ class StandardThemePassTest extends AbstractCompilerPassTestCase
         array $designList,
         array $expectedDesignList
     ) {
-        $this->setParameter('ezdesign.design_list', $designList);
+        $this->setParameter('ibexa.design.list', $designList);
 
         $this->compile();
 
-        self::assertContainerBuilderHasParameter('ezdesign.design_list', $expectedDesignList);
+        self::assertContainerBuilderHasParameter('ibexa.design.list', $expectedDesignList);
     }
 
     /**
@@ -81,3 +81,5 @@ class StandardThemePassTest extends AbstractCompilerPassTestCase
         $container->addCompilerPass(new StandardThemePass());
     }
 }
+
+class_alias(StandardThemePassTest::class, 'EzSystems\Tests\EzPlatformStandardDesignBundle\DependencyInjection\Compiler\StandardThemePassTest');
