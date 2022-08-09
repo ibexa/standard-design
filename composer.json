@@ -8,17 +8,17 @@
     },
     "require": {
         "symfony/http-kernel": "^5.0",
-        "ibexa/design-engine": "~4.2.0@dev",
-        "ibexa/core": "~4.2.0@dev",
+        "ibexa/design-engine": "~4.2.0",
+        "ibexa/core": "~4.2.0",
         "php": "^7.4 || ^8.0"
     },
     "require-dev": {
-        "ibexa/doctrine-schema": "~4.2.0@dev",
+        "ibexa/doctrine-schema": "~4.2.0",
         "matthiasnoback/symfony-dependency-injection-test": "^4.1",
         "phpunit/phpunit": "^8.1",
         "ibexa/code-style": "^1.0",
         "friendsofphp/php-cs-fixer": "^3.0",
-        "ibexa/ci-scripts": "^0.2@dev"
+        "ibexa/ci-scripts": "^0.2"
     },
     "autoload": {
         "psr-4": {
