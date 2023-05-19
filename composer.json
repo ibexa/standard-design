@@ -8,12 +8,12 @@
     },
     "require": {
         "symfony/http-kernel": "^5.0",
-        "ibexa/design-engine": "~4.5.0@dev",
-        "ibexa/core": "~4.5.0@dev",
+        "ibexa/design-engine": "~4.6.0@dev",
+        "ibexa/core": "~4.6.0@dev",
         "php": "^7.4 || ^8.0"
     },
     "require-dev": {
-        "ibexa/doctrine-schema": "~4.5.0@dev",
+        "ibexa/doctrine-schema": "~4.6.0@dev",
         "matthiasnoback/symfony-dependency-injection-test": "^4.1",
         "phpunit/phpunit": "^8.1",
         "ibexa/code-style": "^1.0",
@@ -42,7 +42,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-main": "4.5.x-dev"
+            "dev-main": "4.6.x-dev"
         }
     }
 }
