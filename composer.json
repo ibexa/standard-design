@@ -7,18 +7,18 @@
         "ezsystems/ezplatform-standard-design": "*"
     },
     "require": {
-        "symfony/http-kernel": "^5.0",
-        "ibexa/design-engine": "~5.0.0@dev",
-        "ibexa/core": "~5.0.0@dev",
-        "php": "^7.4 || ^8.0"
+        "php": " >=8.3",
+        "ibexa/core": "~5.0.x-dev",
+        "ibexa/design-engine": "~5.0.x-dev",
+        "symfony/http-kernel": "^5.0"
     },
     "require-dev": {
-        "ibexa/doctrine-schema": "~5.0.0@dev",
-        "matthiasnoback/symfony-dependency-injection-test": "^4.1",
-        "phpunit/phpunit": "^8.1",
-        "ibexa/code-style": "^1.0",
         "friendsofphp/php-cs-fixer": "^3.0",
-        "ibexa/ci-scripts": "^0.2@dev"
+        "ibexa/ci-scripts": "^0.2@dev",
+        "ibexa/code-style": "^1.0",
+        "ibexa/doctrine-schema": "~5.0.x-dev",
+        "matthiasnoback/symfony-dependency-injection-test": "^4.1",
+        "phpunit/phpunit": "^8.1"
     },
     "autoload": {
         "psr-4": {
@@ -44,5 +44,8 @@
         "branch-alias": {
             "dev-main": "5.0.x-dev"
         }
+    },
+    "config": {
+        "sort-packages": true
     }
 }
