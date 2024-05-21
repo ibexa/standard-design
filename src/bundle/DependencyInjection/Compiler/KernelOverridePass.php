@@ -68,5 +68,3 @@ class KernelOverridePass implements CompilerPassInterface
         $container->setParameter('ibexa.design.templates.path_map', $templatesPathMap);
     }
 }
-
-class_alias(KernelOverridePass::class, 'EzSystems\EzPlatformStandardDesignBundle\DependencyInjection\Compiler\EzKernelOverridePass');

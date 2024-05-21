@@ -28,5 +28,3 @@ class IbexaStandardDesignBundle extends Bundle
         $container->addCompilerPass(new StandardThemePass(), PassConfig::TYPE_BEFORE_OPTIMIZATION, 1);
     }
 }
-
-class_alias(IbexaStandardDesignBundle::class, 'EzSystems\EzPlatformStandardDesignBundle\EzPlatformStandardDesignBundle');

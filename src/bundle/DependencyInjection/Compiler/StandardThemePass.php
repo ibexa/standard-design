@@ -39,5 +39,3 @@ class StandardThemePass implements CompilerPassInterface
         $container->setParameter('ibexa.design.list', $designList);
     }
 }
-
-class_alias(StandardThemePass::class, 'EzSystems\EzPlatformStandardDesignBundle\DependencyInjection\Compiler\StandardThemePass');
