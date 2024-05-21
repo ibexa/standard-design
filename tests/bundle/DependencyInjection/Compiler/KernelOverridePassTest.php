@@ -96,5 +96,3 @@ class KernelOverridePassTest extends AbstractCompilerPassTestCase
         }
     }
 }
-
-class_alias(KernelOverridePassTest::class, 'EzSystems\Tests\EzPlatformStandardDesignBundle\DependencyInjection\Compiler\EzKernelOverridePassTest');

@@ -81,5 +81,3 @@ class StandardThemePassTest extends AbstractCompilerPassTestCase
         $container->addCompilerPass(new StandardThemePass());
     }
 }
-
-class_alias(StandardThemePassTest::class, 'EzSystems\Tests\EzPlatformStandardDesignBundle\DependencyInjection\Compiler\StandardThemePassTest');
