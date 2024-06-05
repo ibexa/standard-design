@@ -70,5 +70,3 @@ class IbexaStandardDesignExtension extends Extension implements PrependExtension
         $containerBuilder->addResource(new FileResource($configFile));
     }
 }
-
-class_alias(IbexaStandardDesignExtension::class, 'EzSystems\EzPlatformStandardDesignBundle\DependencyInjection\EzPlatformStandardDesignExtension');

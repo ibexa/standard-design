@@ -21,7 +21,6 @@
     },
     "autoload": {
         "psr-4": {
-            "EzSystems\\EzPlatformStandardDesignBundle\\": "src/bundle",
             "Ibexa\\StandardDesign\\": "src/lib/",
             "Ibexa\\Bundle\\StandardDesign\\": "src/bundle/",
             "Ibexa\\Contracts\\StandardDesign\\": "src/contracts/"
@@ -29,7 +28,6 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "EzSystems\\Tests\\EzPlatformStandardDesignBundle\\": "tests/bundle",
             "Ibexa\\Tests\\StandardDesign\\": "tests/lib/",
             "Ibexa\\Tests\\Bundle\\StandardDesign\\": "tests/bundle/"
         }

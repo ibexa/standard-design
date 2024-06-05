@@ -34,5 +34,3 @@ class EzPlatformStandardDesignExtensionTest extends AbstractExtensionTestCase
         );
     }
 }
-
-class_alias(EzPlatformStandardDesignExtensionTest::class, 'EzSystems\Tests\EzPlatformStandardDesignBundle\DependencyInjection\EzPlatformStandardDesignExtensionTest');
