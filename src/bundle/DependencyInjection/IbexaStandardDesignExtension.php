@@ -26,14 +26,9 @@ class IbexaStandardDesignExtension extends Extension implements PrependExtension
     }
 
     /**
-     * Load Bundle Configuration.
-     *
-     * @param array $configs
-     * @param \Symfony\Component\DependencyInjection\ContainerBuilder $container
-     *
      * @throws \Exception
      */
-    public function load(array $configs, ContainerBuilder $container)
+    public function load(array $configs, ContainerBuilder $container): void
     {
         $configuration = new Configuration();
 
@@ -48,11 +43,9 @@ class IbexaStandardDesignExtension extends Extension implements PrependExtension
     /**
      * Allow an extension to prepend the extension configurations.
      *
-     * @param \Symfony\Component\DependencyInjection\ContainerBuilder $container
-     *
      * @throws \Exception
      */
-    public function prepend(ContainerBuilder $container)
+    public function prepend(ContainerBuilder $container): void
     {
         $this->prependIbexaDesignSettings($container);
     }

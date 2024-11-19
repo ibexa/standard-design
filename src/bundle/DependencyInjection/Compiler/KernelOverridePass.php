@@ -22,11 +22,9 @@ class KernelOverridePass implements CompilerPassInterface
     /**
      * Load Standard Design configuration which overrides Ibexa DXP Core setup.
      *
-     * @param \Symfony\Component\DependencyInjection\ContainerBuilder $container
-     *
      * @throws \Exception
      */
-    public function process(ContainerBuilder $container)
+    public function process(ContainerBuilder $container): void
     {
         $overrideTemplates = $container->getParameter(
             IbexaStandardDesignExtension::OVERRIDE_KERNEL_TEMPLATES_PARAM_NAME
