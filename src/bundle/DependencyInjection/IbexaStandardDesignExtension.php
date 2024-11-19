@@ -54,7 +54,7 @@ class IbexaStandardDesignExtension extends Extension implements PrependExtension
      */
     public function prepend(ContainerBuilder $container)
     {
-        $this->prependEzDesignSettings($container);
+        $this->prependIbexaDesignSettings($container);
     }
 
     /**
@@ -62,9 +62,9 @@ class IbexaStandardDesignExtension extends Extension implements PrependExtension
      *
      * @param \Symfony\Component\DependencyInjection\ContainerBuilder $containerBuilder
      */
-    private function prependEzDesignSettings(ContainerBuilder $containerBuilder)
+    private function prependIbexaDesignSettings(ContainerBuilder $containerBuilder): void
     {
-        $configFile = __DIR__ . '/../Resources/config/extension/ezdesign.yaml';
+        $configFile = __DIR__ . '/../Resources/config/extension/ibexa_design_engine.yaml';
         $config = Yaml::parseFile($configFile);
         $containerBuilder->prependExtensionConfig('ibexa_design_engine', $config);
         $containerBuilder->addResource(new FileResource($configFile));

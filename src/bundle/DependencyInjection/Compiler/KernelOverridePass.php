@@ -36,7 +36,7 @@ class KernelOverridePass implements CompilerPassInterface
                 $container,
                 new FileLocator(__DIR__ . '/../../Resources/config')
             );
-            $loader->load('override/ezpublish.yaml');
+            $loader->load('override/ibexa.yaml');
         }
 
         $this->setStandardThemeDirectories($container);
