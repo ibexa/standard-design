@@ -11,7 +11,10 @@ namespace Ibexa\Tests\Bundle\StandardDesign\DependencyInjection;
 use Ibexa\Bundle\StandardDesign\DependencyInjection\IbexaStandardDesignExtension;
 use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractExtensionTestCase;
 
-class EzPlatformStandardDesignExtensionTest extends AbstractExtensionTestCase
+/**
+ * @covers \Ibexa\Bundle\StandardDesign\DependencyInjection\IbexaStandardDesignExtension
+ */
+final class IbexaStandardDesignExtensionTest extends AbstractExtensionTestCase
 {
     protected function getContainerExtensions(): array
     {
@@ -20,7 +23,7 @@ class EzPlatformStandardDesignExtensionTest extends AbstractExtensionTestCase
         ];
     }
 
-    public function testExtensionPrependsStandardDesignSettings()
+    public function testExtensionPrependsStandardDesignSettings(): void
     {
         $this->load();
 
