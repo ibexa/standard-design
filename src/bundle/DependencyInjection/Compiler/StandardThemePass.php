@@ -28,9 +28,10 @@ class StandardThemePass implements CompilerPassInterface
             return;
         }
 
+        /** @var array<string, string[]> $designList */
         $designList = $container->getParameter('ibexa.design.list');
         foreach ($designList as $designName => $themes) {
-            if (!in_array('standard', $themes)) {
+            if (!in_array('standard', $themes, true)) {
                 $designList[$designName][] = 'standard';
             }
         }

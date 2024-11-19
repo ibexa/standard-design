@@ -45,7 +45,7 @@ class KernelOverridePass implements CompilerPassInterface
      *
      * @param \Symfony\Component\DependencyInjection\ContainerBuilder $container
      */
-    private function setStandardThemeDirectories(ContainerBuilder $container)
+    private function setStandardThemeDirectories(ContainerBuilder $container): void
     {
         if (!$container->hasParameter('kernel.bundles_metadata')) {
             return;
@@ -57,6 +57,7 @@ class KernelOverridePass implements CompilerPassInterface
             return;
         }
 
+        /** @var array<string, string[]>  $templatesPathMap */
         $templatesPathMap = $container->hasParameter('ibexa.design.templates.path_map')
             ? $container->getParameter('ibexa.design.templates.path_map')
             : [];

@@ -16,9 +16,9 @@ use Symfony\Component\Yaml\Yaml;
 
 class IbexaStandardDesignExtension extends Extension implements PrependExtensionInterface
 {
-    public const EXTENSION_NAME = 'ibexa_standard_design';
+    public const string EXTENSION_NAME = 'ibexa_standard_design';
 
-    public const OVERRIDE_KERNEL_TEMPLATES_PARAM_NAME = 'ibexa.design.standard.override_kernel_templates';
+    public const string OVERRIDE_KERNEL_TEMPLATES_PARAM_NAME = 'ibexa.design.standard.override_kernel_templates';
 
     public function getAlias(): string
     {
