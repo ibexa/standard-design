@@ -22,11 +22,9 @@ class KernelOverridePass implements CompilerPassInterface
     /**
      * Load Standard Design configuration which overrides Ibexa DXP Core setup.
      *
-     * @param \Symfony\Component\DependencyInjection\ContainerBuilder $container
-     *
      * @throws \Exception
      */
-    public function process(ContainerBuilder $container)
+    public function process(ContainerBuilder $container): void
     {
         $overrideTemplates = $container->getParameter(
             IbexaStandardDesignExtension::OVERRIDE_KERNEL_TEMPLATES_PARAM_NAME
@@ -36,7 +34,7 @@ class KernelOverridePass implements CompilerPassInterface
                 $container,
                 new FileLocator(__DIR__ . '/../../Resources/config')
             );
-            $loader->load('override/ezpublish.yaml');
+            $loader->load('override/ibexa.yaml');
         }
 
         $this->setStandardThemeDirectories($container);
@@ -47,7 +45,7 @@ class KernelOverridePass implements CompilerPassInterface
      *
      * @param \Symfony\Component\DependencyInjection\ContainerBuilder $container
      */
-    private function setStandardThemeDirectories(ContainerBuilder $container)
+    private function setStandardThemeDirectories(ContainerBuilder $container): void
     {
         if (!$container->hasParameter('kernel.bundles_metadata')) {
             return;
@@ -59,6 +57,7 @@ class KernelOverridePass implements CompilerPassInterface
             return;
         }
 
+        /** @var array<string, string[]>  $templatesPathMap */
         $templatesPathMap = $container->hasParameter('ibexa.design.templates.path_map')
             ? $container->getParameter('ibexa.design.templates.path_map')
             : [];

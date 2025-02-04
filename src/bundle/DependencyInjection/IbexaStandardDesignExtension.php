@@ -16,9 +16,9 @@ use Symfony\Component\Yaml\Yaml;
 
 class IbexaStandardDesignExtension extends Extension implements PrependExtensionInterface
 {
-    public const EXTENSION_NAME = 'ibexa_standard_design';
+    public const string EXTENSION_NAME = 'ibexa_standard_design';
 
-    public const OVERRIDE_KERNEL_TEMPLATES_PARAM_NAME = 'ibexa.design.standard.override_kernel_templates';
+    public const string OVERRIDE_KERNEL_TEMPLATES_PARAM_NAME = 'ibexa.design.standard.override_kernel_templates';
 
     public function getAlias(): string
     {
@@ -26,14 +26,9 @@ class IbexaStandardDesignExtension extends Extension implements PrependExtension
     }
 
     /**
-     * Load Bundle Configuration.
-     *
-     * @param array $configs
-     * @param \Symfony\Component\DependencyInjection\ContainerBuilder $container
-     *
      * @throws \Exception
      */
-    public function load(array $configs, ContainerBuilder $container)
+    public function load(array $configs, ContainerBuilder $container): void
     {
         $configuration = new Configuration();
 
@@ -48,13 +43,11 @@ class IbexaStandardDesignExtension extends Extension implements PrependExtension
     /**
      * Allow an extension to prepend the extension configurations.
      *
-     * @param \Symfony\Component\DependencyInjection\ContainerBuilder $container
-     *
      * @throws \Exception
      */
-    public function prepend(ContainerBuilder $container)
+    public function prepend(ContainerBuilder $container): void
     {
-        $this->prependEzDesignSettings($container);
+        $this->prependIbexaDesignSettings($container);
     }
 
     /**
@@ -62,9 +55,9 @@ class IbexaStandardDesignExtension extends Extension implements PrependExtension
      *
      * @param \Symfony\Component\DependencyInjection\ContainerBuilder $containerBuilder
      */
-    private function prependEzDesignSettings(ContainerBuilder $containerBuilder)
+    private function prependIbexaDesignSettings(ContainerBuilder $containerBuilder): void
     {
-        $configFile = __DIR__ . '/../Resources/config/extension/ezdesign.yaml';
+        $configFile = __DIR__ . '/../Resources/config/extension/ibexa_design_engine.yaml';
         $config = Yaml::parseFile($configFile);
         $containerBuilder->prependExtensionConfig('ibexa_design_engine', $config);
         $containerBuilder->addResource(new FileResource($configFile));

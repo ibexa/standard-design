@@ -21,18 +21,17 @@ class StandardThemePass implements CompilerPassInterface
      *
      * Standard theme defines default core templates used for rendering, so when different design
      * is used, missing template still needs to be rendered using fallback.
-     *
-     * @param \Symfony\Component\DependencyInjection\ContainerBuilder $container
      */
-    public function process(ContainerBuilder $container)
+    public function process(ContainerBuilder $container): void
     {
         if (!$container->hasParameter('ibexa.design.list')) {
             return;
         }
 
+        /** @var array<string, string[]> $designList */
         $designList = $container->getParameter('ibexa.design.list');
         foreach ($designList as $designName => $themes) {
-            if (!in_array('standard', $themes)) {
+            if (!in_array('standard', $themes, true)) {
                 $designList[$designName][] = 'standard';
             }
         }
