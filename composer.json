@@ -8,15 +8,15 @@
     },
     "require": {
         "php": " >=8.3",
-        "ibexa/core": "~5.0.x-dev",
-        "ibexa/design-engine": "~5.0.x-dev",
-        "symfony/http-kernel": "^6.4"
+        "ibexa/core": "dev-ibx-8471-symfony-7 as 5.0.x-dev",
+        "ibexa/design-engine": "dev-ibx-8471-symfony-7 as 5.0.x-dev",
+        "symfony/http-kernel": "^7.2"
     },
     "require-dev": {
         "ibexa/code-style": "~2.0.0",
-        "ibexa/doctrine-schema": "~5.0.x-dev",
-        "ibexa/rector": "~5.0.x-dev",
-        "matthiasnoback/symfony-dependency-injection-test": "^4.1",
+        "ibexa/doctrine-schema": "dev-ibx-8471-symfony-7 as 5.0.x-dev",
+        "ibexa/rector": "dev-ibx-8471-symfony-7 as 5.0.x-dev",
+        "matthiasnoback/symfony-dependency-injection-test": "^5.0",
         "phpunit/phpunit": "^9.6"
     },
     "autoload": {
