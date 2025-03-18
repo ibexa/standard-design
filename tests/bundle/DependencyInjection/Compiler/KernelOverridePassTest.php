@@ -19,7 +19,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
  */
 class KernelOverridePassTest extends AbstractCompilerPassTestCase
 {
-    public function getTemplatesPathMap()
+    public function getTemplatesPathMap(): array
     {
         return [
             [[]],
@@ -45,7 +45,7 @@ class KernelOverridePassTest extends AbstractCompilerPassTestCase
      *
      * @param array $templatesPathMap
      */
-    public function testKernelViewsDirectoryIsMappedToStandardTheme(array $templatesPathMap)
+    public function testKernelViewsDirectoryIsMappedToStandardTheme(array $templatesPathMap): void
     {
         $this->setParameter('ibexa.design.templates.path_map', $templatesPathMap);
         $this->setParameter(
@@ -67,7 +67,7 @@ class KernelOverridePassTest extends AbstractCompilerPassTestCase
         );
     }
 
-    public function testKernelTemplateNamesHaveEzDesignPrefix()
+    public function testKernelTemplateNamesHaveEzDesignPrefix(): void
     {
         $this->container->compile();
 
