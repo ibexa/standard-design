@@ -22,7 +22,7 @@ class StandardThemePassTest extends AbstractCompilerPassTestCase
     /**
      * Data provider returning various Ibexa Design Lists configurations.
      */
-    public function getDesignList()
+    public function getDesignList(): array
     {
         return [
             [
@@ -63,7 +63,7 @@ class StandardThemePassTest extends AbstractCompilerPassTestCase
     public function testStandardThemeIsAppendedToEveryDesign(
         array $designList,
         array $expectedDesignList
-    ) {
+    ): void {
         $this->setParameter('ibexa.design.list', $designList);
 
         $this->compile();
