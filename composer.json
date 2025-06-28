@@ -10,7 +10,7 @@
         "php": " >=8.3",
         "ibexa/core": "~5.0.x-dev",
         "ibexa/design-engine": "~5.0.x-dev",
-        "symfony/http-kernel": "^7.2"
+        "symfony/http-kernel": "^7.3"
     },
     "require-dev": {
         "ibexa/code-style": "~2.0.0",
