@@ -44,5 +44,9 @@
         "branch-alias": {
             "dev-main": "4.6.x-dev"
         }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": false
     }
 }
