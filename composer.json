@@ -2,7 +2,7 @@
     "name": "ibexa/standard-design",
     "description": "Ibexa Standard Design Bundle",
     "type": "ibexa-bundle",
-    "license": ["(GPL-2.0-only or proprietary)"],
+    "license": "(GPL-2.0-only or proprietary)",
     "replace": {
         "ezsystems/ezplatform-standard-design": "*"
     },
