@@ -10,6 +10,7 @@ namespace Ibexa\Tests\Bundle\StandardDesign\DependencyInjection\Compiler;
 
 use Ibexa\Bundle\StandardDesign\DependencyInjection\Compiler\KernelOverridePass;
 use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractCompilerPassTestCase;
+use PHPUnit\Framework\Attributes\DataProvider;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 /**
@@ -19,7 +20,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
  */
 class KernelOverridePassTest extends AbstractCompilerPassTestCase
 {
-    public function getTemplatesPathMap(): array
+    public static function getTemplatesPathMap(): array
     {
         return [
             [[]],
@@ -41,10 +42,9 @@ class KernelOverridePassTest extends AbstractCompilerPassTestCase
     }
 
     /**
-     * @dataProvider getTemplatesPathMap
-     *
      * @param array $templatesPathMap
      */
+    #[DataProvider('getTemplatesPathMap')]
     public function testKernelViewsDirectoryIsMappedToStandardTheme(array $templatesPathMap): void
     {
         $this->setParameter('ibexa.design.templates.path_map', $templatesPathMap);

@@ -10,6 +10,7 @@ namespace Ibexa\Tests\Bundle\StandardDesign\DependencyInjection\Compiler;
 
 use Ibexa\Bundle\StandardDesign\DependencyInjection\Compiler\StandardThemePass;
 use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractCompilerPassTestCase;
+use PHPUnit\Framework\Attributes\DataProvider;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 /**
@@ -22,7 +23,7 @@ class StandardThemePassTest extends AbstractCompilerPassTestCase
     /**
      * Data provider returning various Ibexa Design Lists configurations.
      */
-    public function getDesignList(): array
+    public static function getDesignList(): array
     {
         return [
             [
@@ -55,11 +56,10 @@ class StandardThemePassTest extends AbstractCompilerPassTestCase
     }
 
     /**
-     * @dataProvider getDesignList
-     *
      * @param array $designList
      * @param array $expectedDesignList
      */
+    #[DataProvider('getDesignList')]
     public function testStandardThemeIsAppendedToEveryDesign(
         array $designList,
         array $expectedDesignList

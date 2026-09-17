@@ -10,10 +10,9 @@ namespace Ibexa\Tests\Bundle\StandardDesign\DependencyInjection;
 
 use Ibexa\Bundle\StandardDesign\DependencyInjection\IbexaStandardDesignExtension;
 use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractExtensionTestCase;
+use PHPUnit\Framework\Attributes\CoversClass;
 
-/**
- * @covers \Ibexa\Bundle\StandardDesign\DependencyInjection\IbexaStandardDesignExtension
- */
+#[CoversClass(IbexaStandardDesignExtension::class)]
 final class IbexaStandardDesignExtensionTest extends AbstractExtensionTestCase
 {
     protected function getContainerExtensions(): array
