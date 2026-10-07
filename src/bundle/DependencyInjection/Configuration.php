@@ -16,7 +16,7 @@ class Configuration implements ConfigurationInterface
     /**
      * Generate Configuration for Ibexa DXP Standard Design.
      *
-     * @return \Symfony\Component\Config\Definition\Builder\TreeBuilder The tree builder
+     * @return TreeBuilder The tree builder
      */
     public function getConfigTreeBuilder()
     {
