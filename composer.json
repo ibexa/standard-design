@@ -16,7 +16,7 @@
         "ibexa/doctrine-schema": "~4.6.0@dev",
         "matthiasnoback/symfony-dependency-injection-test": "^4.1",
         "phpunit/phpunit": "^8.1",
-        "ibexa/code-style": "^1.0",
+        "ibexa/code-style": "~2.3.1",
         "friendsofphp/php-cs-fixer": "^3.0",
         "ibexa/ci-scripts": "^0.2@dev"
     },
