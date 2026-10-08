@@ -7,10 +7,10 @@
         "ezsystems/ezplatform-standard-design": "*"
     },
     "require": {
-        "php": " >=8.3",
+        "php": ">=8.5",
         "ibexa/core": "~6.0.x-dev",
         "ibexa/design-engine": "~6.0.x-dev",
-        "symfony/http-kernel": "^7.4 || ^8.1"
+        "symfony/http-kernel": "^8.1"
     },
     "require-dev": {
         "ibexa/code-style": "~2.0.0",
