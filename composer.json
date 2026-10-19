@@ -13,7 +13,7 @@
         "php": "^7.4 || ^8.0"
     },
     "require-dev": {
-        "ibexa/doctrine-schema": "~4.6.0@dev",
+        "ibexa/doctrine-schema": "~4.6.x-dev",
         "matthiasnoback/symfony-dependency-injection-test": "^4.1",
         "phpunit/phpunit": "^9.6",
         "ibexa/code-style": "~2.3.1",
