@@ -15,7 +15,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 /**
  * Test StandardTheme Compiler pass.
  *
- * @see \Ibexa\Bundle\StandardDesign\DependencyInjection\Compiler\StandardThemePass
+ * @see StandardThemePass
  */
 class StandardThemePassTest extends AbstractCompilerPassTestCase
 {
@@ -74,7 +74,7 @@ class StandardThemePassTest extends AbstractCompilerPassTestCase
     /**
      * Register the StandardTheme compiler pass under test.
      *
-     * @param \Symfony\Component\DependencyInjection\ContainerBuilder $container
+     * @param ContainerBuilder $container
      */
     protected function registerCompilerPass(ContainerBuilder $container): void
     {

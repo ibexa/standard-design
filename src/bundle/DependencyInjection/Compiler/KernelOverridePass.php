@@ -22,7 +22,7 @@ class KernelOverridePass implements CompilerPassInterface
     /**
      * Load Standard Design configuration which overrides Ibexa DXP Core setup.
      *
-     * @param \Symfony\Component\DependencyInjection\ContainerBuilder $container
+     * @param ContainerBuilder $container
      *
      * @throws \Exception
      */
@@ -45,7 +45,7 @@ class KernelOverridePass implements CompilerPassInterface
     /**
      * Determine and append to standard theme Ibexa Core bundle views directory path.
      *
-     * @param \Symfony\Component\DependencyInjection\ContainerBuilder $container
+     * @param ContainerBuilder $container
      */
     private function setStandardThemeDirectories(ContainerBuilder $container)
     {
