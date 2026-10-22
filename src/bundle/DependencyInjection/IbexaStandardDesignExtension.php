@@ -28,8 +28,10 @@ class IbexaStandardDesignExtension extends Extension implements PrependExtension
     /**
      * @throws \Exception
      */
-    public function load(array $configs, ContainerBuilder $container): void
-    {
+    public function load(
+        array $configs,
+        ContainerBuilder $container
+    ): void {
         $configuration = new Configuration();
 
         $config = $this->processConfiguration($configuration, $configs);
@@ -53,7 +55,7 @@ class IbexaStandardDesignExtension extends Extension implements PrependExtension
     /**
      * Prepend settings for the given external extension.
      *
-     * @param \Symfony\Component\DependencyInjection\ContainerBuilder $containerBuilder
+     * @param ContainerBuilder $containerBuilder
      */
     private function prependIbexaDesignSettings(ContainerBuilder $containerBuilder): void
     {
