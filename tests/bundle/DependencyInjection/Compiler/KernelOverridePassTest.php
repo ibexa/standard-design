@@ -15,7 +15,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 /**
  * Test overriding Ibexa Core setup for templates with Ibexa Design.
  *
- * @see \Ibexa\Bundle\StandardDesign\DependencyInjection\Compiler\KernelOverridePass
+ * @see KernelOverridePass
  */
 class KernelOverridePassTest extends AbstractCompilerPassTestCase
 {
@@ -31,7 +31,7 @@ class KernelOverridePassTest extends AbstractCompilerPassTestCase
     /**
      * Register the StandardTheme compiler pass under test.
      *
-     * @param \Symfony\Component\DependencyInjection\ContainerBuilder $container
+     * @param ContainerBuilder $container
      */
     protected function registerCompilerPass(ContainerBuilder $container): void
     {

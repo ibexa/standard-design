@@ -53,7 +53,7 @@ class IbexaStandardDesignExtension extends Extension implements PrependExtension
     /**
      * Prepend settings for the given external extension.
      *
-     * @param \Symfony\Component\DependencyInjection\ContainerBuilder $containerBuilder
+     * @param ContainerBuilder $containerBuilder
      */
     private function prependIbexaDesignSettings(ContainerBuilder $containerBuilder): void
     {

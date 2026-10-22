@@ -43,7 +43,7 @@ class KernelOverridePass implements CompilerPassInterface
     /**
      * Determine and append to standard theme Ibexa Core bundle views directory path.
      *
-     * @param \Symfony\Component\DependencyInjection\ContainerBuilder $container
+     * @param ContainerBuilder $container
      */
     private function setStandardThemeDirectories(ContainerBuilder $container): void
     {
